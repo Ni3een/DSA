@@ -17,10 +17,8 @@ public:
         ListNode* t2 = list2;
         ListNode* temp = dummynode;
         while (t1 != NULL && t2 != NULL) {
-            if (t1->val <
-                t2->val) { // compare kro jiski value choti hogi usko lo
-                temp->next =
-                    t1; // temp->next mein t1 daaal do ku ki woh choti hai
+            if (t1->val < t2->val) { // compare kro jiski value choti hogi usko lo
+                temp->next =t1; // temp->next mein t1 daaal do ku ki woh choti hai
                 temp = t1;
                 t1 = t1->next; // t1 ko aage badate rho
             } else {
