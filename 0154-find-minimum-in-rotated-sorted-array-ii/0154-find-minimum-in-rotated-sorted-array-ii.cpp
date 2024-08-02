@@ -1,19 +1,17 @@
 class Solution {
 public:
     int findMin(vector<int>& nums) {
-        if (nums.empty()) return -1; // or throw an exception, depending on the requirements
-        if (nums.size() == 1) return nums[0];
-
+        
         int left = 0;
         int right = nums.size() - 1;
         while (left < right) {
             int mid = left + (right - left) / 2;
-            if (nums[left] == nums[mid] && nums[mid] == nums[right]) {
-                left++;
+            if (nums[left] == nums[mid] && nums[mid] == nums[right]) { //if array containing dubplicate s
+                left++;                                 // shrink them
                 right--;
                 continue;
             }
-            if (nums[left] <= nums[mid] && nums[mid] <= nums[right]) {
+            if (nums[left] <= nums[mid] && nums[mid] <= nums[right]) { // if array is already sorted
                 return nums[left]; // no need to update ans, we can return directly
             }
             if (nums[mid] >= nums[left]) {
