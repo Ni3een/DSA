@@ -5,11 +5,11 @@ public:
         int m=matrix[0].size();
         int row=0;
         int col=m-1;
-        while(row<n && col <m){
+        while(row<n && col >=0){
             if(matrix[row][col]==target){
                 return true;
             }
-            else if(matrix[row][col]<target){
+            else if(matrix[row][col]<target){ // if current elemtn is less move downward
                 row++;
             }
             else{
